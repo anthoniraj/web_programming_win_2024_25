@@ -1,2 +1,9 @@
-# web_programming_win_2024_25
-BCSE203E-Web Programming Winter 2024-25 Batch
+# Web Programming
+- Course Instructor: Prof. Anthoniraj Amalanathan
+
+## Topics
+- Internet and its Application
+- HTML
+- CSS
+- JavaScript 
+- ReactJS
