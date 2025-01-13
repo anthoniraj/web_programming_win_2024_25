@@ -1,105 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthoniraj Amalanathan - Resume</title>
+    <title>Portfolio of Aditya Sharma</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333333;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-        }
-
-        main {
-            width: 95%; 
-            margin: 0 auto;
-            padding: 20px;
+            line-height: 1.5;
+            background-color: #f5f5f5;
         }
 
         header {
-            background-color: #2c3e50;
-            color: white;
+            background-color: #eaf4ff;
             text-align: center;
+            padding: 10px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
         }
 
         header h1 {
             margin: 0;
-            font-size: 30px;
-        }
-
-        header a {
-            color: white;  
-            text-decoration: none;  /* Remove underline from the link */
-        }
-
-        .intro {
-            background-color: #fff;
-            padding: 20px;
-            margin-top: 5px;
-        }
-
-        .intro h2 {
-            margin: 0;
             font-size: 24px;
         }
 
-        .intro img {
-            width: 150px;
-            height: 150px;
-            border-radius: 8px;
-        }
-
-        .skills {
-            background-color: #fff;
+        main {
+            margin: 20px auto;
             padding: 20px;
-            margin-top: 5px;
+            background-color: white;
+            width: 60%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
+        section {
+            margin-bottom: 20px;
         }
 
-        .skills li {
+        .skill {
+            display: inline-block;
+            background-color: #d0e1e2;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #ddd;
+            padding: 5px;
+            margin-bottom: 15px;
+            background-color: #cfeee3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 10px;
-            font-size: 18px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
         }
 
         footer {
             text-align: center;
+            background-color: #eaf4ff;
+            width: 100%;
         }
 
+        footer h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer p {
+            margin: 0;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
     <header>
-        <a href="https://www.example.com" target="_blank">
-            <h1>Anthoniraj Amalanathan - Resume</h1>
-            <a href="https://www.anthoniraj.in" target="_blank">Website: www.anthoniraj.in</a>
-        </a>
+        <img src="photo.png" alt="Aditya Sharma" class="profile-image">
+        <h1>Aditya Sharma</h1>
     </header>
+
     <main>
-        <section class="intro">
-            <h2>Introduction</h2>
-            <p>Hello! I am Anthoniraj Amalanathan, a passionate web developer with a love for coding and problem-solving. I have experience in HTML, CSS, and JavaScript and am always eager to learn new technologies and improve my skills.</p>
-            <img src="https://via.placeholder.com/150" alt="Anthoniraj Amalanathan">
+        <section class="about">
+            <h2>About Me</h2>
+            <p>I recently graduated from VIT University with a degree in Computer Science, specializing in web
+                development. I am passionate about building responsive and user-friendly websites and applications. My
+                academic and project experiences have equipped me with a solid foundation in both front-end and back-end
+                technologies.</p>
         </section>
+
         <section class="skills">
             <h2>Skills</h2>
+            <p><span class="skill">HTML</span> <span class="skill">CSS</span> <span class="skill">JavaScript</span>
+                <span class="skill">React</span> <span class="skill">Node.js</span></p>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <table>
+                <tr>
+                    <th>Qualification</th>
+                    <th>Institute</th>
+                    <th>CGPA</th>
+                </tr>
+                <tr>
+                    <td>12th</td>
+                    <td>Delhi Public School</td>
+                    <td>9.4</td>
+                </tr>
+                <tr>
+                    <td>B.Tech (Computer Science)</td>
+                    <td>VIT University</td>
+                    <td>8.9</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="certified-courses">
+            <h2>Certified Courses</h2>
             <ul>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>Responsive Web Design</li>
-                <li>Problem-solving</li>
+                <li><strong>Front-End Development:</strong> Completed a certified course on HTML, CSS, and JavaScript
+                    from Coursera.</li>
+                <li><strong>React.js Basics:</strong> Attended an advanced React.js training program on Udemy.</li>
+                <li><strong>Full-Stack Development:</strong> Accomplished a full-stack web development bootcamp by
+                    freeCodeCamp.</li>
+            </ul>
+        </section>
+
+        <section class="extra-curricular">
+            <h2>Extra-Curricular Activities</h2>
+            <ul>
+                <li>Member of the college debate team, winning regional-level competitions.</li>
+                <li>Volunteered as an organizer for the annual technical fest at VIT University.</li>
+                <li>Active participant in hackathons, including securing 2nd place in a national-level coding
+                    competition.</li>
+                <li>Represented the college in inter-university chess tournaments.</li>
+            </ul>
+        </section>
+
+        <section class="projects">
+            <h2>Projects Developed</h2>
+            <ul>
+                <li><strong>E-Commerce Website:</strong> Built a fully functional e-commerce platform with user
+                    authentication, product catalog, and payment gateway integration.</li>
+                <li><strong>Portfolio Website:</strong> Created a responsive portfolio website using HTML, CSS, and
+                    JavaScript to showcase personal projects and skills.</li>
+                <li><strong>Weather App:</strong> Developed a weather forecast application using APIs to display current
+                    weather conditions and predictions.</li>
+            </ul>
+        </section>
+
+        <section class="hobbies">
+            <h2>Hobbies</h2>
+            <p>In my free time, I enjoy:</p>
+            <ul>
+                <li>Playing Chess</li>
+                <li>Reading Science Fiction Novels</li>
+                <li>Exploring New Technologies</li>
+                <li>Photography</li>
             </ul>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Anthoniraj Amalanathan</p>
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:aditya.sharma@example.com">aditya.sharma@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/anthoniraj" target="_blank">aditya-sharma-dev</a></p>
     </footer>
 </body>
+
 </html>
