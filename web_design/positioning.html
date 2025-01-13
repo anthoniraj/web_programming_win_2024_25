@@ -12,29 +12,51 @@
         Fixed: Positioned relative to the viewport, unaffected by scrolling.
         Sticky: Positioned relative to the nearest scrollable ancestor, staying in view as you scroll past it.
     -->
+    <style>
+        body{
+            width: 500px;
+            margin: 0 auto;
+            /* margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto; */
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            background-color: aqua;
+            border: 2px solid blue;
+        }
+        #positioned{
+            background-color: yellow;
+            position: sticky;
+            top: 40px;
+            left: 30px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>CSS Positioning and Display</h1>
 
-    <p>
+    <p  id="positioned">
         I am a block-level element. My adjacent block-level elements start on new lines below me by default.
     </p>
 
     <p>
-        Static: The default positioning where elements are displayed in the normal document flow.
+        Absolute: Positioned relative to the nearest positioned ancestor (non-static).
     </p>
 
     <p>
         In CSS, top, bottom, left, and right are properties used to control the spacing, positioning, and sizing of
         elements relative to their surrounding elements.
     </p>
-
     <p>
         Inline elements like this and this sit on the same line as text and other inline
         elements, as long as there's space. If there's not enough space, inline elements wrap to a new line, like
             this example. Images and other inline elements behave the same way, for example: 
-            <img src="positioning.png" alt="positioning">
+            <!-- <img src="positioning.png" alt="positioning"> -->
     </p>
 
 </body>
