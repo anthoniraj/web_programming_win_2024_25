@@ -4,24 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Positioning and Display</title>
-    <!--
-        Static: The default positioning where elements are displayed in the normal document flow.
-        Relative: Positioned relative to its normal position in the document flow.
-        Absolute: Positioned relative to the nearest positioned ancestor (non-static).
-        Fixed: Positioned relative to the viewport, unaffected by scrolling.
-        Sticky: Positioned relative to the nearest scrollable ancestor, staying in view as you scroll past it.
-    -->
+    <title>CSS Inline vs Block Level Elements</title>
     <style>
         .container {
             width: 500px;
             margin: 0 auto;
             border: 2px solid red;
             padding: 10px;
-            /* margin-top: 0;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto; */
         }
 
         h1 {
@@ -34,7 +23,7 @@
         }
 
         span {
-            background: red;
+            background: yellow;
             border: 1px solid black;
         }
     </style>
@@ -42,25 +31,16 @@
 
 <body>
     <div class="container">
-        <h1>CSS Positioning and Display</h1>
+        <h1>CSS Inline vs Block Level Elements</h1>
 
         <p>
-            Fixed: Positioned relative to the viewport, unaffected by scrolling.
-        </p>
-
-        <p>
-            Static: The default positioning where elements are displayed in the normal document flow.
-        </p>
-
-        <p>
-            In CSS, top, bottom, left, and right are properties used to control the spacing, positioning, and sizing of
-            elements relative to their surrounding elements.
+            This is a basic block level element. The adjacent block level elements display on new lines below.
         </p>
         <p>
-            Inline elements like this and this sit on the same line as text and other inline
-            elements, as long as there's space. If there's not enough space, inline elements wrap to a new line, like
-            this example. Images and other inline elements behave the same way, for example:
-            <!-- <img src="positioning.png" alt="positioning"> -->
+            Inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another,
+            and adjacent text nodes, if there is space on the same line. Overflowing inline elements <span> wrap onto a new line if possible — 
+            like this one containing text</span>, or just go on to a new line if not, much like this image will do:
+            <img src="../images/nature.jpg" alt="nature image">
         </p>
     </div>
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Entities Demo</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table {
+            border: 2px solid;
+            border-collapse: collapse;
+            padding: 10px;
+            width: 80%;
+            margin: 20px auto;
+            text-align: left;
+        }
+        th, td {
+            border: 2px solid;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #e8dcdc;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Character Entities Demo</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Character</th>
+                <th>Entity</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&copy;</td>
+                <td>&amp;copy;</td>
+                <td>Copyright symbol</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>&amp;lt;</td>
+                <td>Less than</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>&amp;gt;</td>
+                <td>Greater than</td>
+            </tr>
+            <tr>
+                <td>&amp;</td>
+                <td>&amp;amp;</td>
+                <td>Ampersand</td>
+            </tr>
+            <tr>
+                <td>&quot;</td>
+                <td>&amp;quot;</td>
+                <td>Double quotation mark</td>
+            </tr>
+            <tr>
+                <td>&apos;</td>
+                <td>&amp;apos;</td>
+                <td>Apostrophe (single quote)</td>
+            </tr>
+            <tr>
+                <td>&#169;</td>
+                <td>&amp;#169;</td>
+                <td>Copyright symbol (numeric reference)</td>
+            </tr>
+            <tr>
+                <td>&#62;</td>
+                <td>&amp;#62;</td>
+                <td>Greater than (numeric reference)</td>
+            </tr>
+            <tr>
+                <td>&#60;</td>
+                <td>&amp;#60;</td>
+                <td>Less than (numeric reference)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
