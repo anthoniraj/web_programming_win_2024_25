@@ -14,7 +14,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexbox Layout</title>
     <style>
-
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 200px;
+            background-color: antiquewhite;
+        }
+        h1{
+            flex-basis: 50px;
+            flex-grow: 1;
+            background-color: aquamarine;
+            margin: 5px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
