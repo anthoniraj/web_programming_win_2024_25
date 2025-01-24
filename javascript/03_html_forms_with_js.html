@@ -13,6 +13,39 @@
     -->
 </head>
 <body>
-    
+    <form>
+        <input type="text" 
+            id="username"
+            placeholder="Username"
+            oninput="convertText()"
+            onblur="applyStyle()">
+        <button type="button"
+        onclick="processData()">Submit</button>
+    </form>
+    <script>
+        function applyStyle(){
+            let usernameTextbox= document.getElementById("username");
+            usernameTextbox.style.backgroundColor = "green";
+            usernameTextbox.style.color = "white";
+        }
+        function convertText(){            
+            let usernameTextbox= document.getElementById("username");
+            let username = usernameTextbox.value; 
+            usernameTextbox.style.backgroundColor = "orange";
+
+            console.log(username.toUpperCase());
+            usernameTextbox.value = username.toUpperCase()
+        }
+        function processData(){            
+            let usernameTextbox= document.getElementById("username");
+            let username = usernameTextbox.value;
+            let flag = window.confirm("Do you want to convert to Caps?")
+            if (flag){
+                window.alert("The username is "+ username.toUpperCase());
+                console.log(username.toUpperCase());
+            }
+            
+        }
+    </script>
 </body>
 </html>
