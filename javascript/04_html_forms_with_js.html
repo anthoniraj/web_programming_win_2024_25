@@ -20,8 +20,8 @@
             placeholder="Username"
             oninput="convertText()"
             onblur="applyStyle()">
-        <button type="button"
-        onclick="processData()">Submit</button>
+
+        <button type="button" onclick="processData()">Submit</button>
     </form>
     <script>
         function applyStyle(){
@@ -29,6 +29,7 @@
             usernameTextbox.style.backgroundColor = "green";
             usernameTextbox.style.color = "white";
         }
+
         function convertText(){            
             let usernameTextbox= document.getElementById("username");
             let username = usernameTextbox.value; 
@@ -37,6 +38,7 @@
             console.log(username.toUpperCase());
             usernameTextbox.value = username.toUpperCase()
         }
+        
         function processData(){            
             let usernameTextbox= document.getElementById("username");
             let username = usernameTextbox.value;
@@ -44,8 +46,7 @@
             if (flag){
                 window.alert("The username is "+ username.toUpperCase());
                 console.log(username.toUpperCase());
-            }
-            
+            }            
         }
     </script>
 </body>
