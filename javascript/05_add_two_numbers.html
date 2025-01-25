@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Two Numbers</title>
 </head>
-
 <body>
     <form>
         <h1>Add Two Numbers</h1>
@@ -20,7 +18,8 @@
     <script>
         function addNumbers() {
             // Get the values from the text boxes
-            const num1 = window.parseFloat(document.getElementById('num1').value);
+            numberBox1 = document.getElementById('num1');
+            const num1 = window.parseFloat(numberBox1.value);
             const num2 = window.parseFloat(document.getElementById('num2').value);
 
             // Check if inputs are valid numbers
@@ -32,7 +31,8 @@
                 const sum = num1 + num2;
 
                 // Display the result
-                document.getElementById('result').textContent = "The sum is: "+ sum;
+                resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = "<h1>The sum is: "+ sum +"</h1>";
             }
 
         }
