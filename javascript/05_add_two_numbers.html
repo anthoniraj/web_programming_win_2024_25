@@ -32,7 +32,8 @@
 
                 // Display the result
                 resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = "<h1>The sum is: "+ sum +"</h1>";
+                resultDiv.textContent = "The sum is: "+ sum; // For Plain  Text
+                resultDiv.innerHTML = "<h1>The sum is: "+ sum +"</h1>"; // For HTML Content
             }
 
         }
