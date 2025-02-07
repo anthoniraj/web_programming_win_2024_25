@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener Demo</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="search" 
+        placeholder="Enter keyword" oninput="searchLanguage()">
+    </form>
+    <script>
+        const languages = ['Java', 'PHP', 'Python', 'C++', 'JavaScript']
+        function searchLanguage(){
+            searchBox = document.getElementById('search');
+            searchKey = searchBox.value;
+            for(let i = 0; i < languages.length; i++){
+                if (languages[i].includes(searchKey)){
+                    console.log(languages[i]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
