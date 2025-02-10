@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    <button onclick="getUsers()">Get Users</button>
+    <ul id="userList"></ul>
+    <script>
+         function getUsers() {
+            fetch('http://127.0.0.1:8000/api/users')
+                .then(response => response.json())
+                .then(data => {
+                    const userList = document.getElementById('userList');
+                    userList.innerHTML = ''; // Clear previous list
+                    data.forEach(user => {
+                        let li = document.createElement('li');
+                        li.textContent = `${user.name} - ${user.email}`;
+                        userList.appendChild(li);
+                    });
+                })
+                .catch(error => console.log('Error fetching users:', error));
+        }
+        function getUsersConsole(){
+            window.fetch('http://127.0.0.1:8000/api/users')
+                .then(response => response.json()) // Convert response to JSON
+                .then(data => console.log(data)) // Log the data
+                .catch(error => console.error('Error:', error)); // Handle errors
+        }
+    </script>
+</body>
+</html>
