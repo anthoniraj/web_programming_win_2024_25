@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        #addTaskButton {
+            background-color: aquamarine;
+        }
+        #addTaskButton:hover {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return false;">
+        <input type="text" id="taskInput" placeholder="Enter Task">
+        <button type="button" id="addTaskButton">Add Task</button>
+        <ul id="taskList"></ul>
+    </form>
+    
+    <script>
+        document.getElementById('addTaskButton').addEventListener('click', () => {
+            let taskName = document.getElementById('taskInput').value.trim();
+            if (taskName === '') {
+                alert('Please enter a task!');
+                return;
+            }
+
+            let taskList = document.getElementById('taskList');
+            let li = document.createElement('li');
+            let span = document.createElement('span');
+            let deleteButton = document.createElement('button');
+
+            span.textContent = taskName;
+            deleteButton.textContent = 'Delete Task';
+            deleteButton.type = 'button';
+
+            deleteButton.addEventListener('click', () => {
+                li.remove();
+            });
+
+            li.appendChild(span);
+            li.appendChild(deleteButton);
+            taskList.appendChild(li);
+
+            document.getElementById('taskInput').value = ''; // Clear input field
+        });
+    </script>
+</body>
+</html>

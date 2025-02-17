@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        #addTaskButton {
+            background-color: #28a745;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        li {
+            background: white;
+            padding: 10px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        li button {
+            padding: 5px 10px;
+            margin-left: 5px;
+        }
+
+        li button:first-of-type {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        li button:last-of-type {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return false;">
+        <input type="text" placeholder="Enter Task" id="taskInput">
+        <button type="button" id="addTaskButton">Add Task</button>
+        <ul id="taskList"></ul>
+    </form>
+    
+    <script>
+        document.getElementById('addTaskButton').addEventListener('click', () => {
+            let taskValue = document.getElementById('taskInput').value.trim();
+            if (taskValue === "") {
+                alert("Task cannot be empty!");
+                return;
+            }
+
+            let taskList = document.getElementById('taskList');
+
+            let li = document.createElement('li');
+            let taskSpan = document.createElement('span');
+            taskSpan.textContent = taskValue;
+
+            let updateButton = document.createElement('button');
+            updateButton.textContent = 'Update';
+            updateButton.type = 'button';
+
+            let deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.type = 'button';
+
+            // Update functionality
+            updateButton.addEventListener('click', () => {
+                let newTask = prompt("Update Task:", taskSpan.textContent);
+                if (newTask !== null && newTask.trim() !== "") {
+                    taskSpan.textContent = newTask.trim();
+                }
+            });
+
+            // Delete functionality
+            deleteButton.addEventListener('click', () => {
+                taskList.removeChild(li);
+            });
+
+            li.appendChild(taskSpan);
+            li.appendChild(updateButton);
+            li.appendChild(deleteButton);
+            taskList.appendChild(li);
+
+            document.getElementById('taskInput').value = ''; // Clear input field
+        });
+    </script>
+</body>
+</html>

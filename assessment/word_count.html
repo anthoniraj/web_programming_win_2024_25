@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> CAT 2</title>
+        <!-- Author: ANSHVEER -->
+        <style>
+            body{
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #f9bec8;
+            }
+            
+            .container{
+                background-color: #f6dbf9;
+                padding: 10px;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+                text-align: center;
+                box-shadow: 0px 0px 15px 20px #f9d2d9;
+            }
+            
+            textarea{
+                border: solid #80c7ea;
+                background-color: #c7e6e8;
+                width: 400px;
+            }
+            
+            
+            p{
+                color: red;
+            }
+            
+            span{
+                color: blue;
+            }
+        </style>
+        
+    </head>
+    
+    <body>
+        <div class="container">
+        <label for="input"> Input: </label>
+        <textarea id="input" placeholder="Please type Something"></textarea>
+        <p id="output"> Character Count: 0</p>
+        <span id='char'>Word Count: 0 </span>
+        </div>
+        <script>
+
+            const input = document.getElementById('input');
+            const word = document.getElementById('word');
+            const char = document.getElementById('char');
+            input.addEventListener('input',(event)=>{
+                
+                let A = input.value.trim().split(" ");
+                char.innerHTML =`Character Count: ${input.value.length}`;
+                
+                
+                if(input.value==="") output.innerHTML =`Word Count: 0`;
+                else output.innerHTML =`Word Count: ${A.length}`;
+                
+            });
+            
+            
+            
+        </script>
+    
+    </body>
+</html>
