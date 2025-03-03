@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demoButton {
+            background-color: #ffa;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button onclick="greet()">Click Me</button> -->
+    <button id="demoButton">Click Me</button>
+    <script>
+        const handleClick = (name) => {
+            alert(`Hello, ${name}!`);
+        };
+        function ButtonClick() {
+
+            return <button onClick={() => {handleClick("React Learner")}}>Click Me</button>;
+        }
+        document.getElementById('demoButton').addEventListener(
+            'click', () => { alert('Hi There'); }
+        );
+        // JavaScript Hoisting
+        greetUser();
+        function greetUser() {
+            alert("Hi There!");
+        }
+
+
+        const greet = () => {
+            alert("Hi There!");
+        }
+    </script>
+</body>
+
+</html>
