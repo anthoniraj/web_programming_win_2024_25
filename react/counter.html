@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Counter</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!--
+        1. A Hook is a special function that allows 
+            functional components to use React features.
+        2. useState is a Hook that helps store and update values in a component.
+    -->
+    <div id="root"></div>
+    <script type="text/babel">
+        function Counter() {
+            const [count, setCount] = React.useState(0);
+
+            function decrement(){
+                if (count > 0){
+                    setCount(count-1);
+                }
+            }
+            return (
+                <div>
+                    <h1>Counter: {count}</h1>
+                    <button onClick={()=> setCount(count+1)}>Increment (+)</button>
+                    <button onClick={()=> decrement()}>Decrement (-)</button>
+                    <label>Just s sample {count}</label>
+                    </div>
+            );
+        }
+        ReactDOM.createRoot(document.getElementById("root")).render(<Counter />);
+    </script>
+</body>
+</html>
