@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Counter - Step 5</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Counter() {
+            const [count, setCount] = React.useState(0);
+            const [totalClick, setTotalClick] = React.useState(0);
+
+
+            const containerStyle = {
+                textAlign: "center",
+                marginTop: "50px",
+                fontFamily: "Arial, sans-serif"
+            };
+
+            const buttonStyle = {
+                fontSize: "16px",
+                padding: "10px 20px",
+                margin: "5px",
+                border: "none",
+                cursor: "pointer",
+                borderRadius: "5px"
+            };
+
+            function increment(){
+                setCount(count+1);
+                setTotalClick(totalClick+1);
+            }
+            function decrement() {
+                if (count > 0) {
+                    setCount(count - 1);
+                }
+                setTotalClick(totalClick+1)
+            }
+
+            return (
+                <div style={containerStyle}>
+                    <h1>Counter: {count}</h1>
+                 
+                    <button 
+                        style={buttonStyle}
+                        onClick={increment}
+                    >
+                        Increment (+)
+                    </button>
+                    <button 
+                        style={buttonStyle}
+                        onClick={decrement}
+                    >
+                        Decrement (-)
+                    </button>
+                    <h3>You have clicked {totalClick} times </h3>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<Counter />);
+    </script>
+</body>
+</html>
