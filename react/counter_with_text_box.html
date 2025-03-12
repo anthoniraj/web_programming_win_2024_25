@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJS CDN - Increment Counter</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function CounterApp() {
+            const [count, setCount] = React.useState(0);
+            const [incrementValue, setIncrementValue] = React.useState(1);
+
+            function handleChange(event) {
+                setIncrementValue(Number(event.target.value) || 1); // Default to 1 if empty
+            };
+
+            function handleIncrement()  {
+                setCount(prevCount => prevCount + incrementValue);
+            };
+
+            return (
+                <div style={{ textAlign: "center", marginTop: "20px" }}>
+                    <h2>Counter: {count}</h2>
+                    <input 
+                        type="number" 
+                        value={incrementValue} 
+                        onChange={handleChange} 
+                        placeholder="Enter increment value"
+                    />
+                    <button onClick={handleIncrement} style={{ marginLeft: "10px" }}>
+                        Increment
+                    </button>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<CounterApp />);
+    </script>
+</body>
+</html>
