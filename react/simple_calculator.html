@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
     <div id="root"></div>
     <script type="text/babel">
+        function Calculator(){
+            const [result, setResult] = React.useState(0);
+            const handleCalculate = () =>{
+                const number1 = parseFloat(document.getElementById("number1").value);
+                const number2 = parseFloat(document.getElementById("number2").value);
+                const operation = document.getElementById("operation").value;
+                
+                if(operation === '+'){
+                    setResult(number1+number2);
+                }else if (operation === "-"){
+                    setResult(number1-number2);
+                }
+            }
+            return (
+                <div>
+                    <h1>Simple Calculator</h1>
+                    <input type="number" id="number1"/>
+                    <select id="operation">
+                        <option>+</option>
+                        <option>-</option>
+                    </select>
+                    <input type="number" id="number2"/>
+                    <button onClick={handleCalculate}>Calculate</button>
+                    <h2>Result: {result}</h2>
+                </div>
+            );
+        }
         
-        
+        const rootElement = document.getElementById("root");
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<Calculator/>);
     </script>
 </body>
 </html>

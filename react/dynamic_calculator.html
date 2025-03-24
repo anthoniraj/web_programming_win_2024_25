@@ -4,14 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
     <div id="root"></div>
     <script type="text/babel">
-                
+        function Calculator(){
+            const [number1, setNumber1] = React.useState(0);
+            const [number2, setNumber2] = React.useState(0);
+            const [operation, setOperation] = React.useState('+');
+            const [result, setResult] = React.useState(0);
+
+            React.useEffect(()=>{
+                if(operation == '+'){
+                    setResult(number1+number2);
+                }else if(operation == '-'){
+                    setResult(number1-number2);
+                }
+            }, [number1, number2]);
+           
+            return (
+                <div>
+                    <h1>Simple Calculator</h1>
+                    <input type="number" value={number1} onChange={(e)=>setNumber1(Number(e.target.value))}/>
+                    <select value={operation} onChange={(e) => setOperation(e.target.value)}>
+                        <option>+</option>
+                        <option>-</option>
+                    </select>
+                    <input type="number" value={number2} onChange={(e)=>setNumber2(Number(e.target.value))}/>
+                    <h2>Result: {result}</h2>
+                </div>
+            );
+        }
+        
+        const rootElement = document.getElementById("root");
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<Calculator/>);
     </script>
 </body>
 </html>
