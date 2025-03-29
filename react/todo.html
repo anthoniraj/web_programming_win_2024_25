@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Counter</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function TodoApp(){
+            const [todo, setTodo] = React.useState([]);
+            const [task, setTask] = React.useState("");
+
+            function addTask(){
+                if (task.trim()!== ""){
+                    setTodo([...todo, task])
+                }
+            }
+
+            function deleteTask(index){
+                setTodo(todo.filter((_, i)=>i !== index));
+            }
+
+            React.useEffect(()=>{
+                console.log(todo);
+                setTask("");
+            }, [todo]);
+
+            return (
+                <div>
+                    <input type="text" value={task} onChange={(e)=>setTask(e.target.value)}/>
+                    <button onClick={addTask}>Add</button>
+                    <ul>
+                        {
+                            todo.map(
+                                (value, index) => <li key={index}>{value} <button onClick={()=>deleteTask(index)}>delete</button></li>
+                            )
+                        }
+                    </ul>
+                </div>
+            );
+        }
+        ReactDOM.createRoot(document.getElementById("root")).render(<TodoApp />);
+    </script>
+</body>
+</html>
