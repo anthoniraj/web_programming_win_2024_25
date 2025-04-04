@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Storage with Array (For Loop)</title>
+</head>
+<body>
+  <h2>My List</h2>
+
+  <input type="text" id="itemInput" placeholder="Enter item">
+  <button onclick="addItem()">Add</button>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    // Get existing items or initialize empty array
+    let items = JSON.parse(localStorage.getItem('todoList')) || [];
+
+    // Add new item to array and save
+    function addItem() {
+      const input = document.getElementById('itemInput');
+      const newItem = input.value;
+      if (newItem) {
+        items.push(newItem);
+        localStorage.setItem('todoList', "Any data");
+        input.value = '';
+        showList();
+      }
+    }
+
+    // Display items using a simple for loop
+    function showList() {
+      const list = document.getElementById('itemList');
+      list.innerHTML = '';
+      for (let i = 0; i < items.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = items[i];
+        list.appendChild(li);
+      }
+    }
+
+    // Show list when page loads
+    window.onload = showList;
+  </script>
+</body>
+</html>
