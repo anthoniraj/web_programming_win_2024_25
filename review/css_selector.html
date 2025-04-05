@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <style>
+        body{
+            /*Element Selector*/
+            background-color: #6b5b95;
+        }
+        .container{
+            /* Class Selector */
+            background-color: #d64161; 
+        }
+        #web-header{
+            /* Id Selector */
+            color: white;
+        }
+        table{
+            color:  white;
+            border: 1px solid white;
+        }
+        tbody tr:nth-child(even){
+            background-color: #ff7b25;
+        }
+        tbody tr:nth-child(odd){
+            background-color: #6b5b95;
+        }
+        tbody tr:hover{ /* Pseudo Selector */
+            background-color: #45434d;
+        }
+        button::after{ /*Pseudo Class */
+            content: "#";
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="web-header">HTML CSS JS Web App</h1>
+        <button>Go to Home Page</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Semester</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>STU101</td>
+                    <td>Aarav R.</td>
+                    <td>B.Sc. Computer Science</td>
+                    <td>4</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>STU102</td>
+                    <td>Diya K.</td>
+                    <td>BCA</td>
+                    <td>2</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>STU103</td>
+                    <td>Vikram S.</td>
+                    <td>B.Sc. Mathematics</td>
+                    <td>6</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>STU104</td>
+                    <td>Ishita M.</td>
+                    <td>B.Sc. Physics</td>
+                    <td>5</td>
+                    <td>B</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <h1>React Component</h1>
+        <p>You can develop react component in this section.</p>
+    </div>
+</body>
+
+</html>

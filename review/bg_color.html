@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Test</h1>
+    <button onclick="changeColor()">Change Background</button>
+    <div id="virtual">Some Text</div>
+    <script>
+        function changeColor(){
+            document.body.style.backgroundColor = "red";
+            document.getElementById("virtual").style.color = "blue"
+        }
+        
+    </script>
+</body>
+</html>
